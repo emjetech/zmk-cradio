@@ -27,7 +27,7 @@ Keyboard ZMK menggunakan sistem Bluetooth yang aktif secara otomatis. Pada layar
 
 📌 1. Angka = Slot Bluetooth
 Angka yang tampil di layar menunjukkan slot penyimpanan perangkat (Bluetooth Profile). <br>
-Contoh:
+Contoh: <br>
 Angka 1 di layar = menggunakan BT_SEL 0 <br>
 Angka 2 di layar = menggunakan BT_SEL 1 <br>
 Dan seterusnya <br>
@@ -52,8 +52,8 @@ Pindah ke slot lain (BT_SEL berikutnya), atau
 Hapus slot dengan tombol BT_CLR
 
 📌 5. Contoh Penggunaan Slot
-Rekomendasi pembagian slot:
-BT_SEL 0 → PC
-BT_SEL 1 → Tablet
-BT_SEL 2 → Mac
+Rekomendasi pembagian slot: <br>
+BT_SEL 0 → PC <br>
+BT_SEL 1 → Tablet <br>
+BT_SEL 2 → Mac <br>
 Dengan begitu, Anda hanya perlu mengganti slot saat berpindah perangkat.
