@@ -26,11 +26,11 @@ Lakukan langkah-langkah berikut untuk mereset semua bagian keyboard split Anda:
 Keyboard ZMK menggunakan sistem Bluetooth yang aktif secara otomatis. Pada layar keyboard, Anda akan melihat angka dan simbol yang menjelaskan status koneksi.
 
 📌 1. Angka = Slot Bluetooth
-Angka yang tampil di layar menunjukkan slot penyimpanan perangkat (Bluetooth Profile).
+Angka yang tampil di layar menunjukkan slot penyimpanan perangkat (Bluetooth Profile). <br>
 Contoh:
-Angka 1 di layar = menggunakan BT_SEL 0
-Angka 2 di layar = menggunakan BT_SEL 1
-Dan seterusnya
+Angka 1 di layar = menggunakan BT_SEL 0 <br>
+Angka 2 di layar = menggunakan BT_SEL 1 <br>
+Dan seterusnya <br>
 Setiap slot dapat menyimpan satu perangkat.
 
 📌 2. Simbol “X”
