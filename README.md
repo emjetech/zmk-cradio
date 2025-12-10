@@ -1,20 +1,59 @@
 ZMK Cradio/Sweep untuk Super Mini / Promicro Wireless NRF52840.
 
-ZMK Codes Docs https://zmk.dev/docs/codes
+[ZMK STUDIO](https://zmk.studio/)
+Ada update baru ZMK Studio remapping tanpa perlu di flash 
 
-Ada update baru ZMK Studio remapping tanpa perlu di flash https://zmk.studio/
-
-Untuk cara fork repository ini :
-
-ZMK Keymap Editor https://nickcoutsos.github.io/keymap-editor/
-Tutorial Mapping ZMK https://youtu.be/cAi5pnkz48M
-
-Setelah firmware di download, tekan 2x tombol reset saat USB terhubung. lalu tinggal extract dan drop file .uf2 nya di disk bootloader.
+[Full Dokumentasi ZMK](https://zmk.dev/docs)
 
 
-PENJELASAN BLUETOOTH
+Tools :
+[ZMK Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
+Video fork repository :
+[Tutorial Mapping ZMK](https://youtu.be/cAi5pnkz48M)
 
-Ini di ibaratkan jika ada display
-Penjelasan ZMK
 
-Bluetooth auto ON. Penjelasannya di display ada angka dan simbol, angka tersebut menunjukan BT Profile. Contoh ada angka 1 di display berarti itu BT_SEL 0 di keymap. Jika ada gambar X berarti BT Profile tersebut sudah pernah terkoneksi sebelumnya. Jika ingin pairing ulang bisa press BT_CLR di keymap (akan berubah jadi gambar gerigi) lalu pair ulang dan jika berhasil gambar akan berubah menjadi ceklis. Tidak bisa di overwrite, misalnya keyboard ingin di gunakan di Tablet namun sudah pernah terkoneksi di PC. Harus pindah ke BT_SEL yang lain atau di Clear lagi dengan BT_CLR. Misal BT_SEL 0 di PC, BT_SEL 1 di tablet, dan BT_SEL 2 di Mac.
+Prosedur Reset Keyboard Split
+Lakukan langkah-langkah berikut untuk mereset semua bagian keyboard split Anda:
+- Masukkan setiap bagian keyboard split ke mode bootloader. Dengan cara tekan 2x tombol reset saat USB terhubung akan muncul drive baru, untuk flash nya cukup drag & drop di disk bootloader
+- Flash salah satu bagian keyboard dengan firmware reset pengaturan setting_reset.uf2.
+- Ulangi langkah 2 pada bagian lainnya dari keyboard split.
+- Flash image firmware yang sebenarnya untuk setiap bagian keyboard split (misalnya my_board_left.uf2 untuk bagian kiri, my_board_right.uf2 untuk bagian kanan).
+- Jika central dan peripheral tidak saling terhubung setelah menyelesaikan langkah-langkah ini, akan membantu untuk mereset central dan peripheral pada waktu yang hampir bersamaan. Biasanya dilakukan dengan menghubungkan pin reset ke ground pada setiap mikrokontroler keyboard Anda, menekan tombol reset, atau mematikan lalu menyalakan keduanya dengan sakelar daya.
+- Setelah selesai, Anda harus menghapus/lupakan keyboard dari perangkat host mana pun yang sebelumnya terpasang, lalu lakukan pairing ulang, karena informasi pairing tersebut juga telah dihapus dari keyboard.
+  
+
+🔵 Penjelasan Bluetooth ZMK (Versi Sederhana)
+Keyboard ZMK menggunakan sistem Bluetooth yang aktif secara otomatis. Pada layar keyboard, Anda akan melihat angka dan simbol yang menjelaskan status koneksi.
+
+📌 1. Angka = Slot Bluetooth
+Angka yang tampil di layar menunjukkan slot penyimpanan perangkat (Bluetooth Profile).
+Contoh:
+Angka 1 di layar = menggunakan BT_SEL 0
+Angka 2 di layar = menggunakan BT_SEL 1
+Dan seterusnya
+Setiap slot dapat menyimpan satu perangkat.
+
+📌 2. Simbol “X”
+Jika muncul ikon X, artinya:
+Slot tersebut pernah digunakan, tetapi
+Tidak sedang terhubung ke perangkat mana pun
+
+📌 3. Pairing Ulang
+Jika ingin melakukan pairing ulang untuk slot yang sedang dipakai:
+Tekan tombol BT_CLR pada keymap
+Layar akan berubah menjadi ikon gerigi (slot di-reset)
+Lakukan pairing dari perangkat Anda
+Jika berhasil, simbol akan berubah menjadi ikon centang
+
+📌 4. Slot Tidak Bisa Ditimpa
+Slot Bluetooth tidak bisa langsung ditimpa perangkat baru.
+Jika slot tersebut sudah pernah terhubung ke perangkat lain, Anda harus:
+Pindah ke slot lain (BT_SEL berikutnya), atau
+Hapus slot dengan tombol BT_CLR
+
+📌 5. Contoh Penggunaan Slot
+Rekomendasi pembagian slot:
+BT_SEL 0 → PC
+BT_SEL 1 → Tablet
+BT_SEL 2 → Mac
+Dengan begitu, Anda hanya perlu mengganti slot saat berpindah perangkat.
