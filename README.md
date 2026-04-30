@@ -60,3 +60,9 @@ BT_SEL 0 → PC <br>
 BT_SEL 1 → Tablet <br>
 BT_SEL 2 → Mac <br>
 Dengan begitu, Anda hanya perlu mengganti slot saat berpindah perangkat.
+
+
+
+NOTES !!!
+
+Saat charging indicator di Board harus Steady biru (tidak blinking). fungsi slider memutuskan arus dari baterai ke MCU. Jadi saat charge posisi slider harus on
